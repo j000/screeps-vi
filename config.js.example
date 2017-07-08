@@ -1,0 +1,2 @@
+module.exports.email = 'user@example.com';
+module.exports.password = '12345678';

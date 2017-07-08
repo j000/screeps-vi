@@ -4,3 +4,6 @@
 [submodule "screeps-profiler"]
 	path = screeps-profiler
 	url = https://github.com/screepers/screeps-profiler
+[submodule "ScreepsAutocomplete"]
+	path = ScreepsAutocomplete
+	url = https://github.com/Garethp/ScreepsAutocomplete

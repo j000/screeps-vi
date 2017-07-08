@@ -1,0 +1,12 @@
+{
+	"ecmaVersion": 6,
+	"libs": [
+		"lodash"
+	],
+	"loadEagerly": [
+		"ScreepsAutocomplete/**/*.js"
+	],
+	"plugins": {
+		"node": {}
+	}
+}

@@ -2,8 +2,6 @@
 "use strict";
 let fs = require('fs');
 var https = require('https');
-//var mod = require('module');
-//modules = modules || {};
 try {
 	require('./config.js');
 } catch (e) {

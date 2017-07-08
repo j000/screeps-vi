@@ -1,3 +1,6 @@
 [submodule "sync"]
 	path = sync
 	url = https://gist.github.com/laverdet/b67db14ccc8520abea2c
+[submodule "screeps-profiler"]
+	path = screeps-profiler
+	url = https://github.com/screepers/screeps-profiler

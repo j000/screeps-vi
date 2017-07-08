@@ -15,9 +15,10 @@ try {
 // Read local code from disk
 let files = {};
 fs.readdirSync('.').forEach(function(file) {
-		if (file !== 'sync.js' && file !== 'config.js' && /\.js$/.test(file)) {
-				files[file.replace( /\.js$/, '')] = fs.readFileSync(file, 'utf8');
-		}
+	if (file !== 'sync.js' && file !== 'config.js' && /\.js$/.test(file)) {
+		console.log('Adding file: '+file);
+		files[file.replace( /\.js$/, '')] = fs.readFileSync(file, 'utf8');
+	}
 });
 //files['last-push'] = 'module.exports='+ Date.now()+ ';';
 
@@ -42,6 +43,6 @@ var req = https.request({
 req.write(JSON.stringify(data));
 req.end();
 req.on('response', function(res) {
-			console.log('HTTP Status '+ res.statusCode);
+	console.log('HTTP Status '+ res.statusCode);
 });
 

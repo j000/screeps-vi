@@ -16,7 +16,37 @@ function delayRun(a, ticksMin, ticksMax) {
 	return false;
 }
 
+function uuidv4_crypto() {
+	return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(
+		/[018]/g,
+		c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+	)
+}
+
+function uuidv4_nocrypto() {
+	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+		/[xy]/g,
+		function(c) {
+			var r = Math.random() * 16 | 0, v = (c == 'x') ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		}
+	);
+}
+
+let crypto;
+let uuidv4;
+try {
+	crypto = require('crypto');
+	uuidv4 = uuidv4_crypto;
+} catch (err) {
+	//console.log('crypto support is disabled!');
+	uuidv4 = uuidv4_nocrypto;
+}
+
 module.exports.loop = function () {
+	/*console.log(uuidv4());
+	console.log(uuidv4());
+	console.log(uuidv4());*/
 
 	if (delayRun('garbage', 40)) {
 		for(var name in Memory.creeps) {
